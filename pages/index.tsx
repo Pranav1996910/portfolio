@@ -1,23 +1,9 @@
 
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  const [scrollY, setScrollY] = useState(0);
-  const [isNavVisible, setIsNavVisible] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setScrollY(currentScrollY);
-      setIsNavVisible(currentScrollY < 50 || currentScrollY < scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [scrollY]);
 
   return (
     <div className={styles.container}>
@@ -27,7 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <nav className={`${styles.nav} ${isNavVisible ? styles.navVisible : styles.navHidden}`}>
+      <nav className={styles.nav}>
         <div className={styles.logo}>
           <span className={styles.logoIcon}>{'{ }'}</span>
           <span className={styles.logoText}>Pranav Nayak</span>
@@ -41,7 +27,7 @@ const Home: NextPage = () => {
       </nav>
 
       <main className={styles.main}>
-        <div className={styles.hero} style={{ transform: `translateY(${scrollY * 0.5}px)` }}>
+        <div className={styles.hero}>
           <div className={styles.heroContent}>
             <div className={styles.avatarContainer}>
               <img 
@@ -63,7 +49,7 @@ const Home: NextPage = () => {
               <button className={styles.secondaryBtn}>Get in Touch</button>
             </div>
           </div>
-          <div className={styles.heroVisual} style={{ transform: `translateY(${scrollY * -0.3}px)` }}>
+          <div className={styles.heroVisual}>
             <div className={styles.codeBlock}>
               <div className={styles.codeHeader}>
                 <div className={styles.codeDots}>
