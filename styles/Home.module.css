@@ -101,7 +101,6 @@
 .avatarContainer {
   position: relative;
   margin-bottom: 2rem;
-  animation: avatarFloat 3s ease-in-out infinite;
 }
 
 .avatar {
