@@ -38,6 +38,16 @@
   border-bottom: 1px solid rgba(59, 130, 246, 0.1);
 }
 
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: #cbd5e1;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -557,16 +567,39 @@
 
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .hero {
+    gap: 3rem;
+    padding: 2rem 3rem;
+  }
+  
+  .codeBlock {
+    min-width: 350px;
+  }
+  
+  .section {
+    padding: 4rem 3rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 3rem;
     padding: 2rem;
+    min-height: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
   
   .heroContent {
     align-items: center;
+    order: 1;
+  }
+  
+  .heroVisual {
+    order: 2;
   }
   
   .heroTitle {
@@ -580,20 +613,47 @@
   .aboutGrid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    text-align: center;
+  }
+  
+  .techGrid {
+    justify-items: center;
+    max-width: 400px;
+    margin: 0 auto;
   }
   
   .nav {
-    padding: 1rem;
+    padding: 1rem 2rem;
   }
   
   .navLinks {
-    gap: 1rem;
+    gap: 1.5rem;
+  }
+  
+  .navLinks a {
+    font-size: 0.9rem;
+  }
+  
+  .projectsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .servicesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .heroTitle {
     font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  .heroDescription {
+    font-size: 1.1rem;
+    text-align: center;
   }
   
   .avatar {
@@ -604,51 +664,269 @@
   .heroButtons {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+    width: 100%;
   }
   
   .primaryBtn, .secondaryBtn {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
+    padding: 0.875rem 1.5rem;
   }
   
   .contactButtons {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
   
   .codeBlock {
     min-width: auto;
     max-width: 100%;
+    width: 100%;
+  }
+  
+  .codeContent {
+    padding: 1rem;
+    font-size: 0.8rem;
   }
   
   .servicesGrid {
     grid-template-columns: 1fr;
   }
   
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+  
   .navLinks {
     display: none;
+  }
+  
+  .mobileMenuButton {
+    display: block;
+  }
+  
+  .nav {
+    padding: 1rem;
+  }
+  
+  .logoText {
+    font-size: 1.1rem;
+  }
+  
+  .logoIcon {
+    font-size: 1.3rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+  
+  .experienceTimeline {
+    padding-left: 1rem;
+  }
+  
+  .timelineItem {
+    padding-left: 50px;
+  }
+  
+  .experienceTimeline::before {
+    left: 15px;
+  }
+  
+  .timelineMarker {
+    left: 7px;
+  }
+  
+  .contactDescription {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 1.5rem 1rem;
+  }
+  
+  .section {
+    padding: 2.5rem 1rem;
+  }
+  
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+  
+  .avatar {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .codeBlock {
+    margin: 0 -1rem;
+    border-radius: 8px;
+  }
+  
+  .projectCard, .serviceCard {
+    margin: 0 -0.5rem;
+  }
+  
+  .aboutText {
+    font-size: 1rem;
+  }
+  
+  .techGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .techItem {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 480px) {
   .hero {
-    padding: 1rem;
+    padding: 1rem 0.75rem;
   }
   
   .section {
-    padding: 2rem 1rem;
+    padding: 2rem 0.75rem;
   }
   
   .heroTitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .heroDescription {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
   
   .sectionTitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
   }
   
   .avatar {
     width: 80px;
     height: 80px;
+  }
+  
+  .nav {
+    padding: 0.75rem;
+  }
+  
+  .logoText {
+    font-size: 1rem;
+  }
+  
+  .logoIcon {
+    font-size: 1.2rem;
+  }
+  
+  .primaryBtn, .secondaryBtn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+  
+  .codeContent {
+    font-size: 0.75rem;
+    padding: 0.75rem;
+  }
+  
+  .serviceCard, .projectCard {
+    padding: 1.5rem 1rem;
+  }
+  
+  .serviceIcon {
+    font-size: 2rem;
+  }
+  
+  .projectContent h3, .serviceCard h3 {
+    font-size: 1.1rem;
+  }
+  
+  .projectContent p, .serviceCard p {
+    font-size: 0.9rem;
+  }
+  
+  .projectTech {
+    gap: 0.25rem;
+  }
+  
+  .projectTech span {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+  }
+  
+  .experienceTimeline {
+    padding-left: 0.5rem;
+  }
+  
+  .timelineItem {
+    padding-left: 40px;
+    margin-bottom: 2rem;
+  }
+  
+  .experienceTimeline::before {
+    left: 10px;
+  }
+  
+  .timelineMarker {
+    left: 2px;
+    width: 14px;
+    height: 14px;
+  }
+  
+  .timelineContent h3 {
+    font-size: 1.1rem;
+  }
+  
+  .timelineContent h4 {
+    font-size: 0.9rem;
+  }
+  
+  .timelineContent p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .heroTitle {
+    font-size: 1.6rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+  
+  .avatar {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .techGrid {
+    grid-template-columns: 1fr;
+    max-width: 200px;
+  }
+  
+  .codeContent {
+    font-size: 0.7rem;
+  }
+  
+  .section {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .hero {
+    padding: 1rem 0.5rem;
   }
 }

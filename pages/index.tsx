@@ -25,6 +25,9 @@ const Home: NextPage = () => {
           <a href="#services">Services</a>
           <a href="#contact">Contact</a>
         </div>
+        <button className={styles.mobileMenuButton}>
+          ☰
+        </button>
       </nav>
 
       <main className={styles.main}>
