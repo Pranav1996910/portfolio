@@ -106,8 +106,13 @@
   animation: fadeInUp 1s ease-out;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: inherit;
   justify-content: center;
+  margin: auto;
+}
+
+.projectgifs {
+  overflow: hidden;;
 }
 
 /* Avatar Styles */
@@ -117,8 +122,8 @@
 }
 
 .avatar {
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   border: 4px solid #3b82f6;
   box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
@@ -144,7 +149,7 @@
 }
 
 .heroTitle {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1.5rem;
@@ -207,6 +212,7 @@
 /* Code Block */
 .heroVisual {
   display: flex;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
   animation: fadeInRight 1s ease-out 0.3s both;
@@ -263,12 +269,17 @@
   margin-bottom: 0.5rem;
 }
 
+.codeLineSpace {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 .keyword { color: #f472b6; }
 .variable { color: #60a5fa; }
 .operator { color: #cbd5e1; }
 .property { color: #34d399; }
 .string { color: #fbbf24; }
-.number { color: #a78bfa; }
+.number { color: #8b8bfa; }
 
 /* Sections */
 .section {
@@ -333,6 +344,7 @@
   border-radius: 6px;
   font-size: 0.9rem;
   font-weight: 500;
+  min-width:100px;
   text-align: center;
   border: 1px solid rgba(59, 130, 246, 0.2);
 }
@@ -411,12 +423,17 @@
 }
 
 .projectImage {
-  height: 200px;
+  width: 100%;
   background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+
+}.projectgifs {
+  width: 100%;
+  height: auto; /* Maintains the aspect ratio */
+  display: block; /* Removes any default spacing below the image */
 }
 
 .projectPlaceholder {
@@ -426,6 +443,11 @@
 
 .projectContent {
   padding: 1.5rem;
+}
+.linkedInLogo{
+  font-size: 20px;
+  align-items: center;
+  vertical-align: bottom;
 }
 
 .projectContent h3 {
@@ -480,6 +502,8 @@
 .serviceIcon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .serviceCard h3 {
@@ -627,7 +651,7 @@
   }
   
   .techGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     max-width: 400px;
     margin: 0 auto;
@@ -668,8 +692,12 @@
   }
   
   .avatar {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+  }
+    
+  .avatarContainer {
+    margin-bottom: 1rem;
   }
   
   .heroButtons {
@@ -774,8 +802,12 @@
   }
   
   .avatar {
-    width: 90px;
-    height: 90px;
+    width: 150px;
+    height: 150px;
+  }  
+
+  .avatarContainer {
+    margin-bottom: 1rem;
   }
   
   .codeBlock {
@@ -792,7 +824,7 @@
   }
   
   .techGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
   }
   
@@ -827,8 +859,12 @@
   }
   
   .avatar {
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
+  }
+    
+  .avatarContainer {
+    margin-bottom: 1rem;
   }
   
   .nav {
@@ -920,12 +956,16 @@
   }
   
   .avatar {
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .avatarContainer {
+    margin-bottom: 1rem;
   }
   
   .techGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 3fr;
     max-width: 200px;
   }
   
