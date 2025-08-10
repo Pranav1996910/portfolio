@@ -21,6 +21,7 @@ const Home: NextPage = () => {
         <div className={styles.navLinks}>
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
           <a href="#services">Services</a>
           <a href="#contact">Contact</a>
         </div>
@@ -136,6 +137,56 @@ const Home: NextPage = () => {
                 <h3>Full Stack Developer</h3>
                 <h4>Previous Companies (3 roles)</h4>
                 <p>Built enterprise applications, APIs, and user interfaces for various industries including fintech and healthcare.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" className={styles.section}>
+          <h2 className={styles.sectionTitle}>Featured Projects</h2>
+          <div className={styles.projectsGrid}>
+            <div className={styles.projectCard}>
+              <div className={styles.projectImage}>
+                <div className={styles.projectPlaceholder}>🔧</div>
+              </div>
+              <div className={styles.projectContent}>
+                <h3>Enterprise CRM System</h3>
+                <p>Custom CRM built for a manufacturing company with inventory management and sales tracking.</p>
+                <div className={styles.projectTech}>
+                  <span>React</span>
+                  <span>Node.js</span>
+                  <span>PostgreSQL</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className={styles.projectCard}>
+              <div className={styles.projectImage}>
+                <div className={styles.projectPlaceholder}>☁️</div>
+              </div>
+              <div className={styles.projectContent}>
+                <h3>SaaS Analytics Platform</h3>
+                <p>Multi-tenant analytics dashboard with real-time data processing and custom reporting.</p>
+                <div className={styles.projectTech}>
+                  <span>Next.js</span>
+                  <span>Python</span>
+                  <span>AWS</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className={styles.projectCard}>
+              <div className={styles.projectImage}>
+                <div className={styles.projectPlaceholder}>💻</div>
+              </div>
+              <div className={styles.projectContent}>
+                <h3>E-commerce Platform</h3>
+                <p>Scalable e-commerce solution with payment integration and inventory management.</p>
+                <div className={styles.projectTech}>
+                  <span>TypeScript</span>
+                  <span>Docker</span>
+                  <span>Stripe</span>
+                </div>
               </div>
             </div>
           </div>
