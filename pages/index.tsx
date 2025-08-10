@@ -37,8 +37,8 @@ const Home: NextPage = () => {
           <div className={styles.heroContent}>
             <div className={styles.avatarContainer}>
               <Image
-                width="100"
-                height="100"
+                width={200}
+                height={200}
                 src="/pranav.png"
                 alt="Pranav Nayak"
                 className={styles.avatar}
@@ -169,7 +169,7 @@ const Home: NextPage = () => {
             <div className={styles.projectCard}>
               <div className={styles.projectImage}>
                 <div className={styles.projectPlaceholder}>
-                  <Image width="100"  height="100" className={styles.projectgifs} alt="my project" src="/project2.gif" />
+                  <Image width={100}  height={100} className={styles.projectgifs} alt="my project" src="/project2.gif" />
                 </div>
               </div>
               <div className={styles.projectContent}>
@@ -187,7 +187,7 @@ const Home: NextPage = () => {
             <div className={styles.projectCard}>
               <div className={styles.projectImage}>
                 <div className={styles.projectPlaceholder}>
-                  <Image width="100"  height="100" className={styles.projectgifs} alt="my project" src="/project3.gif" />
+                  <Image width={100}  height={100} className={styles.projectgifs} alt="my project" src="/project3.gif" />
                 </div>
               </div>
               <div className={styles.projectContent}>
@@ -204,7 +204,7 @@ const Home: NextPage = () => {
             <div className={styles.projectCard}>
               <div className={styles.projectImage}>
                 <div className={styles.projectPlaceholder}>
-                  <Image width="100"  height="100" className={styles.projectgifs} alt="my project" src="/gift-store.gif" />
+                  <Image width={100}  height={100} className={styles.projectgifs} alt="my project" src="/gift-store.gif" />
                 </div>
               </div>
               <div className={styles.projectContent}>
@@ -221,7 +221,7 @@ const Home: NextPage = () => {
             <div className={styles.projectCard}>
               <div className={styles.projectImage}>
                 <div className={styles.projectPlaceholder}>
-                  <Image width="100"  height="100" className={styles.projectgifs} alt="my project" src="/uni.gif" />
+                  <Image width={100}  height={100} className={styles.projectgifs} alt="my project" src="/uni.gif" />
                 </div>
               </div>
               <div className={styles.projectContent}>
