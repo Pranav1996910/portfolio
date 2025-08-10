@@ -96,7 +96,7 @@ const Home: NextPage = () => {
 
         <section id="about" className={styles.section}>
           <h2 className={styles.sectionTitle}>About Me</h2>
-          <div className={styles.aboutGrid}>
+          <div className={styles.aboutContent}>
             <div className={styles.aboutText}>
               <p>
                 With 7 years of full-stack development experience across 4 companies, 

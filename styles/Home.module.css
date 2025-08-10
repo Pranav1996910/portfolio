@@ -219,6 +219,7 @@
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(59, 130, 246, 0.2);
   min-width: 400px;
+  margin: 0 auto;
 }
 
 .codeHeader {
@@ -290,33 +291,39 @@
 }
 
 /* About Section */
-.aboutGrid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 4rem;
-  align-items: start;
+.aboutContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .aboutText {
   font-size: 1.1rem;
   line-height: 1.8;
   color: #cbd5e1;
+  margin-bottom: 3rem;
 }
 
 .aboutText p {
   margin-bottom: 1.5rem;
 }
 
+.techStack {
+  margin-top: 2rem;
+}
+
 .techStack h3 {
   color: #e2e8f0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 1.25rem;
 }
 
 .techGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0.75rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .techItem {
@@ -615,13 +622,12 @@
     padding: 3rem 2rem;
   }
   
-  .aboutGrid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .aboutContent {
     text-align: center;
   }
   
   .techGrid {
+    grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     max-width: 400px;
     margin: 0 auto;
