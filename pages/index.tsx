@@ -1,9 +1,24 @@
 
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
+  const [scrollY, setScrollY] = useState(0);
+  const [isNavVisible, setIsNavVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrollY(currentScrollY);
+      setIsNavVisible(currentScrollY < 50 || currentScrollY < scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [scrollY]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,7 +27,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <nav className={styles.nav}>
+      <nav className={`${styles.nav} ${isNavVisible ? styles.navVisible : styles.navHidden}`}>
         <div className={styles.logo}>
           <span className={styles.logoIcon}>{'{ }'}</span>
           <span className={styles.logoText}>Pranav Nayak</span>
@@ -26,8 +41,16 @@ const Home: NextPage = () => {
       </nav>
 
       <main className={styles.main}>
-        <div className={styles.hero}>
+        <div className={styles.hero} style={{ transform: `translateY(${scrollY * 0.5}px)` }}>
           <div className={styles.heroContent}>
+            <div className={styles.avatarContainer}>
+              <img 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face&auto=format"
+                alt="Pranav Nayak"
+                className={styles.avatar}
+              />
+              <div className={styles.avatarGlow}></div>
+            </div>
             <h1 className={styles.heroTitle}>
               Full Stack Developer<span className={styles.accent}>.</span>
             </h1>
@@ -40,7 +63,7 @@ const Home: NextPage = () => {
               <button className={styles.secondaryBtn}>Get in Touch</button>
             </div>
           </div>
-          <div className={styles.heroVisual}>
+          <div className={styles.heroVisual} style={{ transform: `translateY(${scrollY * -0.3}px)` }}>
             <div className={styles.codeBlock}>
               <div className={styles.codeHeader}>
                 <div className={styles.codeDots}>
